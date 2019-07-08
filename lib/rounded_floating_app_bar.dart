@@ -29,7 +29,7 @@ class RoundedFloatingAppBar extends StatefulWidget {
         assert(pinned != null),
         assert(snap != null),
         assert(floating || !snap,
-        'The "snap" argument only makes sense for floating app bars.'),
+            'The "snap" argument only makes sense for floating app bars.'),
         super(key: key);
 
   /// A widget to display before the [title].
@@ -154,7 +154,7 @@ class _RoundedFloatingAppBarState extends State<RoundedFloatingAppBar>
   Widget build(BuildContext context) {
     final double topPadding = MediaQuery.of(context).padding.top;
     final double collapsedHeight =
-    (widget.pinned && widget.floating) ? topPadding : null;
+        (widget.pinned && widget.floating) ? topPadding : null;
 
     return MediaQuery.removePadding(
       context: context,
@@ -325,7 +325,8 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
       currentExtent: math.max(minExtent, maxExtent - shrinkOffset),
       toolbarOpacity: toolbarOpacity,
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 12.0),
+        padding: EdgeInsets.symmetric(horizontal: 8.0),
+        margin: EdgeInsets.only(top: 4.0),
         child: SafeArea(
           child: Material(
             color: backgroundColor,
@@ -335,19 +336,19 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
               leading: leading ??
                   (Scaffold.of(context).hasDrawer && automaticallyImplyLeading
                       ? IconButton(
-                    icon: Icon(Icons.menu),
-                    onPressed: () {
-                      Scaffold.of(context).openDrawer();
-                    },
-                  )
+                          icon: Icon(Icons.menu),
+                          onPressed: () {
+                            Scaffold.of(context).openDrawer();
+                          },
+                        )
                       : null),
               title: title,
               trailing: actions != null
                   ? Row(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: actions,
-              )
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: actions,
+                    )
                   : null,
             ),
           ),
