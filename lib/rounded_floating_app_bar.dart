@@ -339,7 +339,10 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
                 tileMode: TileMode.clamp,
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
-                colors: [Colors.black, Colors.black38],
+                colors: [
+                  Colors.black.withAlpha(160),
+                  Colors.black.withAlpha(160)
+                ],
               ),
             ),
             child: ListTile(
