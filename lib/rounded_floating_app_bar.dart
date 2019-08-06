@@ -325,7 +325,7 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
       currentExtent: math.max(minExtent, maxExtent - shrinkOffset),
       toolbarOpacity: toolbarOpacity,
       child: Container(
-        //padding: EdgeInsets.symmetric(horizontal: 8.0),
+        padding: EdgeInsets.symmetric(horizontal: 2.0),
         //margin: EdgeInsets.only(top: 4.0),
         child: SafeArea(
           // child: Material(
@@ -333,17 +333,12 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
           //   borderRadius: BorderRadius.circular(8.0),
           //   elevation: elevation,
           child: Container(
+            padding: EdgeInsets.only(bottom: 4),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.vertical(bottom: Radius.circular(10)),
-              gradient: LinearGradient(
-                tileMode: TileMode.clamp,
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Colors.black.withAlpha(160),
-                  Colors.black.withAlpha(160)
-                ],
+              borderRadius: BorderRadius.all(
+                Radius.circular(10),
               ),
+              color: backgroundColor,
             ),
             child: ListTile(
               leading: leading ??
